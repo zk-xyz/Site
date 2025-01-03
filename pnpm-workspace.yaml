@@ -1,0 +1,4 @@
+packages:
+  - 'eliza/agent'
+  - 'eliza/client-direct'
+  - 'eliza/core' 

@@ -1,21 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+/* Tailwind directives - VSCode may show errors but these are required for Tailwind to work */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+ 
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: hsl(45 40% 98%);
+    --foreground: hsl(220 20% 10%);
+    --card: hsl(45 40% 98%);
+    --card-foreground: hsl(220 20% 10%);
+    --popover: hsl(45 40% 98%);
+    --popover-foreground: hsl(220 20% 10%);
+    --primary: hsl(220 20% 10%);
+    --primary-foreground: hsl(45 40% 98%);
+    --secondary: hsl(30 20% 95%);
+    --secondary-foreground: hsl(220 20% 10%);
+    --muted: hsl(30 20% 95%);
+    --muted-foreground: hsl(220 15% 40%);
+    --accent: hsl(30 20% 95%);
+    --accent-foreground: hsl(220 20% 10%);
+    --destructive: hsl(0 85% 40%);
+    --destructive-foreground: hsl(45 40% 98%);
+    --border: hsl(30 20% 85%);
+    --input: hsl(30 20% 85%);
+    --ring: hsl(220 20% 10%);
+    --radius: 0.125rem;
+  }
+ 
+  .dark {
+    --background: hsl(220 20% 10%);
+    --foreground: hsl(45 40% 98%);
+    --card: hsl(220 20% 10%);
+    --card-foreground: hsl(45 40% 98%);
+    --popover: hsl(220 20% 10%);
+    --popover-foreground: hsl(45 40% 98%);
+    --primary: hsl(45 40% 98%);
+    --primary-foreground: hsl(220 20% 10%);
+    --secondary: hsl(220 15% 15%);
+    --secondary-foreground: hsl(45 40% 98%);
+    --muted: hsl(220 15% 15%);
+    --muted-foreground: hsl(30 20% 70%);
+    --accent: hsl(220 15% 15%);
+    --accent-foreground: hsl(45 40% 98%);
+    --destructive: hsl(0 85% 40%);
+    --destructive-foreground: hsl(45 40% 98%);
+    --border: hsl(220 15% 25%);
+    --input: hsl(220 15% 25%);
+    --ring: hsl(45 40% 98%);
   }
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+ 
+@layer base {
+  * {
+    /* VSCode may show an error for @apply but it's required for Tailwind */
+    @apply border-border;
+  }
+  body {
+    /* VSCode may show an error for @apply but it's required for Tailwind */
+    @apply bg-background text-foreground;
+    font-family: 'Crimson Text', 'Georgia', serif;
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', 'Crimson Text', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+  }
 }
